@@ -381,6 +381,14 @@ failure the function returns empty cv::Mat object, but does not release user-pro
 */
 CV_EXPORTS Mat imdecode( InputArray buf, int flags, Mat* dst);
 
+/** @overload
+@param buf
+@param flags
+@param dst The output placeholder for the decoded matrix. It can save the image
+reallocations when the function is called repeatedly for images of the same size.
+*/
+CV_EXPORTS bool imdecode(InputArray buf, int flags, Mat& dst);
+
 /** @brief Reads a multi-page image from a buffer in memory.
 
 The function imdecodemulti reads a multi-page image from the specified buffer in the memory. If the buffer is too short or
