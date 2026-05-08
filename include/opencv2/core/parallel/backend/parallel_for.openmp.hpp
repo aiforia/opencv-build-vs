@@ -36,7 +36,10 @@ public:
 
     virtual void parallel_for(int tasks, FN_parallel_for_body_cb_t body_callback, void* callback_data) CV_OVERRIDE
     {
-#pragma omp parallel for schedule(dynamic) num_threads(numThreads > 0 ? numThreads : numThreadsMax)
+// schedule(static) is used instead of schedule(dynamic) so the loop runs correctly
+// under Wine, whose vcomp _vcomp_for_dynamic_init is a stub that drops iteration ranges
+// for chunked-dynamic flag values. Negligible perf impact for uniform-cost iterations.
+#pragma omp parallel for schedule(static) num_threads(numThreads > 0 ? numThreads : numThreadsMax)
         for (int i = 0; i < tasks; ++i)
             body_callback(i, i + 1, callback_data);
     }
