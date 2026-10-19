@@ -1,6 +1,6 @@
 [submodule "opencv"]
 	path = opencv
-	url = https://github.com/reunanen/opencv
+	url = https://github.com/aiforia/opencv
 [submodule "openexr"]
 	path = openexr
 	url = https://github.com/reunanen/openexr
