@@ -1509,6 +1509,9 @@
     <ClCompile Include="opencv\3rdparty\openjpeg\openjp2\event.c">
       <Filter>3rdparty\openjpeg</Filter>
     </ClCompile>
+    <ClCompile Include="opencv\3rdparty\openjpeg\openjp2\ht_dec.c">
+      <Filter>3rdparty\openjpeg</Filter>
+    </ClCompile>
     <ClCompile Include="opencv\3rdparty\openjpeg\openjp2\function_list.c">
       <Filter>3rdparty\openjpeg</Filter>
     </ClCompile>
